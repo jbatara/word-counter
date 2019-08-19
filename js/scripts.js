@@ -21,8 +21,17 @@ $(document).ready(function() {
         wordTally[word] = 1;
       }
     });
-    Object.keys(wordTally).forEach(function(key) {
-      $("#output").append("<p>" + key + ": " + wordTally[key] +"</p>");
+    var array = [];
+    Object.keys(wordTally).forEach(function(word){
+      array.push([word, wordTally[word]]);
+    });
+    var comparison = function(a,b){
+      return a[1]-b[1];
+    }
+    var sortedArray = array.sort(comparison);
+    sortedArray.reverse();
+    sortedArray.forEach(function(array) {
+      $("#output").append("<p>" + array[0] + ": " + array[1] +"</p>");
     });
     $("#output").show();
   });
