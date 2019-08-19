@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $("#input").submit(function(event) {
     event.preventDefault();
+    $("#output").text("");
     var userParagraph = $("#paragraph").val();
     var paragraphArray = userParagraph.split(" ");
     var noPunctuation = paragraphArray.map(function(word) {
@@ -28,6 +29,6 @@ $(document).ready(function() {
   });
   $("#clear").click(function() {
     $("#input").trigger("reset");
-    $("#output").hide();
+    $("#output").text("");
   });
 });
