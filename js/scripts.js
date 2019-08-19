@@ -25,7 +25,6 @@ $(document).ready(function() {
       $("#output").append("<p>" + key + ": " + wordTally[key] +"</p>");
     });
     $("#output").show();
-
   });
   $("#clear").click(function() {
     $("#input").trigger("reset");
